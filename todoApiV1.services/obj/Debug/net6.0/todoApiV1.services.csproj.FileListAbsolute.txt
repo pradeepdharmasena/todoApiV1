@@ -1,0 +1,17 @@
+D:\Projects\todo\servers\TodoApiV1\todoApiV1.services\bin\Debug\net6.0\todoApiV1.services.deps.json
+D:\Projects\todo\servers\TodoApiV1\todoApiV1.services\bin\Debug\net6.0\todoApiV1.services.dll
+D:\Projects\todo\servers\TodoApiV1\todoApiV1.services\bin\Debug\net6.0\todoApiV1.services.pdb
+D:\Projects\todo\servers\TodoApiV1\todoApiV1.services\bin\Debug\net6.0\todoApiV1.models.dll
+D:\Projects\todo\servers\TodoApiV1\todoApiV1.services\bin\Debug\net6.0\todoApiV1.repository.dll
+D:\Projects\todo\servers\TodoApiV1\todoApiV1.services\bin\Debug\net6.0\todoApiV1.models.pdb
+D:\Projects\todo\servers\TodoApiV1\todoApiV1.services\bin\Debug\net6.0\todoApiV1.repository.pdb
+D:\Projects\todo\servers\TodoApiV1\todoApiV1.services\obj\Debug\net6.0\todoApiV1.services.csproj.AssemblyReference.cache
+D:\Projects\todo\servers\TodoApiV1\todoApiV1.services\obj\Debug\net6.0\todoApiV1.services.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\todo\servers\TodoApiV1\todoApiV1.services\obj\Debug\net6.0\todoApiV1.services.AssemblyInfoInputs.cache
+D:\Projects\todo\servers\TodoApiV1\todoApiV1.services\obj\Debug\net6.0\todoApiV1.services.AssemblyInfo.cs
+D:\Projects\todo\servers\TodoApiV1\todoApiV1.services\obj\Debug\net6.0\todoApiV1.services.csproj.CoreCompileInputs.cache
+D:\Projects\todo\servers\TodoApiV1\todoApiV1.services\obj\Debug\net6.0\todoApiV1.services.csproj.CopyComplete
+D:\Projects\todo\servers\TodoApiV1\todoApiV1.services\obj\Debug\net6.0\todoApiV1.services.dll
+D:\Projects\todo\servers\TodoApiV1\todoApiV1.services\obj\Debug\net6.0\refint\todoApiV1.services.dll
+D:\Projects\todo\servers\TodoApiV1\todoApiV1.services\obj\Debug\net6.0\todoApiV1.services.pdb
+D:\Projects\todo\servers\TodoApiV1\todoApiV1.services\obj\Debug\net6.0\ref\todoApiV1.services.dll

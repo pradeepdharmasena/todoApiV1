@@ -1,0 +1,220 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Projects\\todo\\servers\\TodoApiV1\\todoApiV1.services\\todoApiV1.services.csproj": {}
+  },
+  "projects": {
+    "D:\\Projects\\todo\\servers\\TodoApiV1\\todoApiV1.models\\todoApiV1.models.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Projects\\todo\\servers\\TodoApiV1\\todoApiV1.models\\todoApiV1.models.csproj",
+        "projectName": "todoApiV1.models",
+        "projectPath": "D:\\Projects\\todo\\servers\\TodoApiV1\\todoApiV1.models\\todoApiV1.models.csproj",
+        "packagesPath": "C:\\Users\\Pradeep\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\todo\\servers\\TodoApiV1\\todoApiV1.models\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Pradeep\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Projects\\todo\\servers\\TodoApiV1\\todoApiV1.repository\\todoApiV1.repository.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Projects\\todo\\servers\\TodoApiV1\\todoApiV1.repository\\todoApiV1.repository.csproj",
+        "projectName": "todoApiV1.repository",
+        "projectPath": "D:\\Projects\\todo\\servers\\TodoApiV1\\todoApiV1.repository\\todoApiV1.repository.csproj",
+        "packagesPath": "C:\\Users\\Pradeep\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\todo\\servers\\TodoApiV1\\todoApiV1.repository\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Pradeep\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\Projects\\todo\\servers\\TodoApiV1\\todoApiV1.models\\todoApiV1.models.csproj": {
+                "projectPath": "D:\\Projects\\todo\\servers\\TodoApiV1\\todoApiV1.models\\todoApiV1.models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.10, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Projects\\todo\\servers\\TodoApiV1\\todoApiV1.services\\todoApiV1.services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Projects\\todo\\servers\\TodoApiV1\\todoApiV1.services\\todoApiV1.services.csproj",
+        "projectName": "todoApiV1.services",
+        "projectPath": "D:\\Projects\\todo\\servers\\TodoApiV1\\todoApiV1.services\\todoApiV1.services.csproj",
+        "packagesPath": "C:\\Users\\Pradeep\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\todo\\servers\\TodoApiV1\\todoApiV1.services\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Pradeep\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\Projects\\todo\\servers\\TodoApiV1\\todoApiV1.models\\todoApiV1.models.csproj": {
+                "projectPath": "D:\\Projects\\todo\\servers\\TodoApiV1\\todoApiV1.models\\todoApiV1.models.csproj"
+              },
+              "D:\\Projects\\todo\\servers\\TodoApiV1\\todoApiV1.repository\\todoApiV1.repository.csproj": {
+                "projectPath": "D:\\Projects\\todo\\servers\\TodoApiV1\\todoApiV1.repository\\todoApiV1.repository.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[6.32.3, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.32.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

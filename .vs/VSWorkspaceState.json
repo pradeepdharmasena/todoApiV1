@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\todoApiV1",
+    "\\todoApiV1.services",
+    "\\todoApiV1.services\\dtos",
+    "\\todoApiV1\\Controllers"
+  ],
+  "SelectedNode": "\\todoApiV1.services\\IUserService.cs",
+  "PreviewInSolutionExplorer": false
+}
