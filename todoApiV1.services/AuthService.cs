@@ -27,7 +27,7 @@ namespace todoApiV1.services
             List<Claim> claims = new List<Claim>()
             {
                 new Claim(ClaimTypes.Email, user.Email),
-               new Claim("UserId", user.Id.ToString()),
+                new Claim("UserId", user.Id.ToString()),
                 new Claim(ClaimTypes.Name, user.FirstName +  " " + user.LastName),
             };
 

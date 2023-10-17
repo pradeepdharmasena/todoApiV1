@@ -20,7 +20,8 @@ namespace todoApiV1.Controllers
         {
             try{
                 string result = _authService.GetAuthToken(email, pw);
-                return Ok(result);
+                var tokenObject = new { token = result };
+                return Ok(tokenObject);
             }
             catch(Exception ex)
             {
