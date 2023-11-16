@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using todoApiV1.models;
 using todoApiV1.services;
@@ -11,22 +11,49 @@ namespace todoApiV1.Controllers
     public class AppUserController : ControllerBase
     {
         public readonly IUserService _userService;
-        public AppUserController(IUserService userService) 
+        public IMapper _mapper;
+        public AppUserController(IUserService userService, IMapper mapper) 
         {
             _userService = userService;
+            _mapper = mapper;
         }
         [HttpGet]
         [Route("email")]
         public IActionResult Get(string email)
         {
-            return Ok(email);
+            try
+            {
+                AppUser appUser = _userService.GetByEmail(email);
+                AppUserResDTO response = _mapper.Map<AppUserResDTO>(appUser);
+                return Ok(response);
+            }catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
+
+        [HttpGet]
+        [Route("emailFull")]
+        public IActionResult GetFullUser(string email)
+        {
+            try
+            {
+                AppUser appUser = _userService.GetByEmail(email);
+                return Ok(appUser);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
 
         [HttpPost]
         public IActionResult Create(UserRegisterReqDto userRegisterReqDto)
         {
            AppUser user =  _userService.Create(userRegisterReqDto);
-           return Ok(user);
+           AppUserResDTO response = _mapper.Map<AppUserResDTO>(user);
+           return Ok(response);
         }
 
         

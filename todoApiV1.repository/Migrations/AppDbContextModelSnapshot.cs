@@ -25,12 +25,8 @@ namespace todoApiV1.repository.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<DateOnly>("Birthdate")
+                    b.Property<DateOnly>("Birthday")
                         .HasColumnType("date");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("longtext");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -123,13 +119,13 @@ namespace todoApiV1.repository.Migrations
 
             modelBuilder.Entity("todoApiV1.models.Multimedia", b =>
                 {
-                    b.HasOne("todoApiV1.models.ToDo", "Todo")
+                    b.HasOne("todoApiV1.models.ToDo", "ToDo")
                         .WithMany("Multimedias")
                         .HasForeignKey("ToDoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Todo");
+                    b.Navigation("ToDo");
                 });
 
             modelBuilder.Entity("todoApiV1.models.ToDo", b =>

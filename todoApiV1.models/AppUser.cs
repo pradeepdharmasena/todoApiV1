@@ -15,9 +15,9 @@ namespace todoApiV1.models
         public int Id { get; set; }
         public string FirstName { get; set; } = string.Empty;
         public string LastName { get; set; } = string.Empty;
-        public string Description { get; set; } = string.Empty;
-        public DateOnly Birthdate { get; set; }
+        public DateOnly Birthday { get; set; }
         [Required]
+
         public string Email { get; set; }
         public string Password { get; set; } = string.Empty;
         public ICollection<ToDo> ToDos { get; } = new List<ToDo>();

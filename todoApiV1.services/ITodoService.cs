@@ -12,6 +12,8 @@ namespace todoApiV1.services
     {
         public ToDo? Create(int userId, ToDoDto toDoDto);
 
-        public List<ToDo> GetToDos(int userId);
+        public List<ToDo>? GetToDos(int userId);
+
+        public ToDo? GetToDo(int userId, int todoId);
     }
 }

@@ -24,13 +24,19 @@ namespace todoApiV1.services
                 
         }
 
+        public AppUser GetByEmail(string email)
+        {
+            return _userDbContext.AppUsers.Where(user => user.Email.Equals(email)).First();
+
+        }
+
         public AppUser Create(UserRegisterReqDto userRegisterReqDto)
         {
             AppUser user = new AppUser(); 
             user.Email = userRegisterReqDto.Email;
             user.FirstName = userRegisterReqDto.FirstName;
             user.LastName = userRegisterReqDto.LastName;
-            user.Birthdate = userRegisterReqDto.BirthDate;
+            user.Birthday = userRegisterReqDto.Birthday;
             user.Password = userRegisterReqDto.Password;
 
             _userDbContext.Add(user);

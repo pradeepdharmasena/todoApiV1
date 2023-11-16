@@ -15,6 +15,7 @@ namespace todoApiV1.services.profiles
         {
             CreateMap<AppUser, UserRegisterReqDto>();
             CreateMap<UserRegisterReqDto, AppUser>();
+            CreateMap<AppUser, AppUserResDTO>();
         }
     }
 }

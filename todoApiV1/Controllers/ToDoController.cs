@@ -23,21 +23,73 @@ namespace todoApiV1.Controllers
             _todoService = todoService;
             _configuration = configuration;
         }
+
+        [Route("{id}")]
+        [HttpGet]
+        public IActionResult GetTodo(int id)
+        {
+            try
+            {
+                Claim? claimEmail = User?.FindFirst(ClaimTypes.Email);
+                Claim? claimAppUserId = User?.FindFirst("UserId");
+                if(claimAppUserId == null)
+                {
+                    return NotFound("User not found.");
+                }
+                ToDo? toDo = _todoService.GetToDo(int.Parse(claimAppUserId.Value), id);
+                var ResponseObject = new { todo = toDo };
+                return Ok(ResponseObject);
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest("Error occured.");
+            }
+
+
+        }
+        [Route("")]
         [HttpGet]
         public IActionResult Get()
         {
-            Claim? claimEmail = User?.FindFirst(ClaimTypes.Email);
-            Claim? claimAppUserId = User?.FindFirst("UserId"); 
+            try
+            {
+                Claim? claimEmail = User?.FindFirst(ClaimTypes.Email);
+                Claim? claimAppUserId = User?.FindFirst("UserId");
+                if(claimAppUserId == null)
+                {
+                    return NotFound("User not found.");
+                }
+                List<ToDo>? toDos = _todoService.GetToDos(int.Parse(claimAppUserId.Value));
+                var ResponseObject = new { todos = toDos };
+                return Ok(ResponseObject);
 
-            return Ok( claimAppUserId?.Value + " has request his tasks : " + claimEmail?.Value );
+            }
+            catch (Exception ex)
+            {
+                return BadRequest("Error occured.");
+            }
+
+            
         }
 
         [HttpPost]
         public IActionResult Create(ToDoDto toDoDto) 
         {
-            Claim? claimAppUserId = User?.FindFirst("UserId");
-           ToDo todo = _todoService.Create(int.Parse(claimAppUserId?.Value), toDoDto);
-            return Ok(todo);
+            try
+            {
+                Claim? claimAppUserId = User?.FindFirst("UserId");
+                if (claimAppUserId == null)
+                {
+                    return NotFound("User not found");
+                }
+                ToDo? todo = _todoService.Create(int.Parse(claimAppUserId.Value), toDoDto);
+                return Ok(todo);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest("Error occured.");
+            }
         }
 
         [HttpPut]

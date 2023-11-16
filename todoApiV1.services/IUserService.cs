@@ -11,6 +11,7 @@ namespace todoApiV1.services
     public interface IUserService
     {
         public AppUser GetByCredentials(string email, string pw);
+        public AppUser GetByEmail(string email);
 
         public AppUser Create(UserRegisterReqDto userRegisterReqDto);
 

@@ -27,6 +27,10 @@ namespace todoApiV1.repository
                 .WithOne(e => e.User)
                 .HasForeignKey(e => e.UserId)
                 .IsRequired();
+
+            modelBuilder.Entity<ToDo>();
+
+            modelBuilder.Entity<Multimedia>();
         }
 
     }

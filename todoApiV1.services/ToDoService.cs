@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,17 +23,34 @@ namespace todoApiV1.services
             this.mapper = mapper;
         }
 
-        public List<ToDo> GetToDos(int userId)
+        public List<ToDo>? GetToDos(int userId)
         {
 
-            var user = appDbContext.AppUsers.SingleOrDefault(u => u.Id == userId);
+            var user = appDbContext.AppUsers
+                .Include(u => u.ToDos)
+                .SingleOrDefault(u => u.Id ==userId );
             var todos = user?.ToDos.ToList();
             return todos;
         }
 
+        public ToDo? GetToDo(int userId, int todoId)
+        {
+
+            var user = appDbContext.AppUsers
+                .Include(u => u.ToDos)
+                .SingleOrDefault(u => u.Id == userId);
+            if (user != null)
+            {
+                ToDo? todo = user.ToDos.FirstOrDefault(t => t.Id == todoId);
+                return todo;
+            }
+
+            return null;
+        }
+
         public ToDo? Create(int userId, ToDoDto toDoDto)
         {
-            AppUser user = appDbContext.AppUsers.SingleOrDefault(u => u.Id == userId);
+            AppUser? user = appDbContext.AppUsers.SingleOrDefault(u => u.Id == userId);
             ToDo toDo = this.mapper.Map<ToDo>(toDoDto);
 
             user?.ToDos.Add(toDo);
