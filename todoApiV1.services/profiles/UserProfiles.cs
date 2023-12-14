@@ -13,9 +13,9 @@ namespace todoApiV1.services.profiles
     {
         public UserProfiles() 
         {
-            CreateMap<AppUser, UserRegisterReqDto>();
-            CreateMap<UserRegisterReqDto, AppUser>();
-            CreateMap<AppUser, AppUserResDTO>();
+            CreateMap<AppUser, AppUserCreateDTO>();
+            CreateMap<AppUserCreateDTO, AppUser>();
+            CreateMap<AppUser, AppUserReadDTO>();
         }
     }
 }

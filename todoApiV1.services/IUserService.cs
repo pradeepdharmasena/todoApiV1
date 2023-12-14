@@ -13,9 +13,9 @@ namespace todoApiV1.services
         public AppUser GetByCredentials(string email, string pw);
         public AppUser GetByEmail(string email);
 
-        public AppUser Create(UserRegisterReqDto userRegisterReqDto);
+        public AppUser Create(AppUserCreateDTO userRegisterReqDto);
 
-        public AppUser Update(UserRegisterReqDto userRegisterReqDto);
+        public AppUser Update(AppUserCreateDTO userRegisterReqDto);
 
     }
 }

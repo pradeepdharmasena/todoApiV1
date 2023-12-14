@@ -28,6 +28,8 @@ namespace todoApiV1.Controllers
         [HttpGet]
         public IActionResult GetTodo(int id)
         {
+            Console.WriteLine("--------------------------");
+            Console.WriteLine("Id " + id);
             try
             {
                 Claim? claimEmail = User?.FindFirst(ClaimTypes.Email);
@@ -52,6 +54,7 @@ namespace todoApiV1.Controllers
         [HttpGet]
         public IActionResult Get()
         {
+
             try
             {
                 Claim? claimEmail = User?.FindFirst(ClaimTypes.Email);
@@ -74,7 +77,7 @@ namespace todoApiV1.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(ToDoDto toDoDto) 
+        public IActionResult Create(ToDoCreateDto toDoDto) 
         {
             try
             {
@@ -88,20 +91,60 @@ namespace todoApiV1.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest("Error occured.");
+                
+                return BadRequest(ex.Message);
             }
         }
 
+        [Route("{toDoId}")]
         [HttpPut]
-        public IActionResult Update()
+        public IActionResult Update(int toDoId, [FromBody] ToDoUpdateDto toDoDto)
         {
-            return Ok("Not Implemnted");
-        }
+            Console.WriteLine("--------------------------");
+            Console.WriteLine("Id " +  toDoId);
+            Console.WriteLine("Title " + toDoDto.Tittle);
+            try
+            {
+                Claim? claimAppUserId = User?.FindFirst("UserId");
+                if (claimAppUserId == null)
+                {
+                    return NotFound("User not found");
+                }
+                ToDo? todo = _todoService.Update(toDoId, toDoDto);
+                return Ok(todo);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest("Error occured." + ex.Message);
+            }
 
+        }
+        [Route("{toDoId}")]
         [HttpDelete]
-        public IActionResult Delete() 
+        public IActionResult Delete(int toDoId) 
         {
-            return Ok("Not Implemnted");
+            try
+            {
+                Claim? claimAppUserId = User?.FindFirst("UserId");
+                if (claimAppUserId == null)
+                {
+                    return NotFound("User not found");
+                }
+                Boolean isDeleted = _todoService.Delete(toDoId);
+                if (isDeleted)
+                {
+                    return Ok("Deleted");
+                }
+                else
+                {
+                    return BadRequest("Unable to Delete");
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                return BadRequest("Error occured.");
+            }
         }
     }
 }

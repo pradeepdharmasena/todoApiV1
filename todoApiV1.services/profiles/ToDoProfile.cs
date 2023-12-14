@@ -13,8 +13,13 @@ namespace todoApiV1.services.profiles
     {
         public ToDoProfile() 
         {
-            CreateMap<ToDo, ToDoDto>();
-            CreateMap<ToDoDto, ToDo>()
+            CreateMap<ToDo, ToDoUpdateDto>();
+            CreateMap<ToDoUpdateDto, ToDo>()
+                .ForMember(dest => dest.User, opt => opt.Ignore())
+                .ForMember(dest => dest.UserId, opt => opt.Ignore());
+
+            CreateMap<ToDo, ToDoCreateDto>();
+            CreateMap<ToDoCreateDto, ToDo>()
                 .ForMember(dest => dest.User, opt => opt.Ignore())
                 .ForMember(dest => dest.UserId, opt => opt.Ignore());
         }

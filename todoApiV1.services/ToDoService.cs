@@ -48,7 +48,7 @@ namespace todoApiV1.services
             return null;
         }
 
-        public ToDo? Create(int userId, ToDoDto toDoDto)
+        public ToDo? Create(int userId, ToDoCreateDto toDoDto)
         {
             AppUser? user = appDbContext.AppUsers.SingleOrDefault(u => u.Id == userId);
             ToDo toDo = this.mapper.Map<ToDo>(toDoDto);
@@ -58,17 +58,45 @@ namespace todoApiV1.services
             return toDo;
         }
 
-        public ToDo Delete(int toDoId)
+        public Boolean Delete(int toDoId)
         {
-            ToDo todo = appDbContext.ToDo.First(todo => todo.Id == toDoId);
-            appDbContext.ToDo.Remove(todo);
-            appDbContext.SaveChanges();
-            return todo;
+            try
+            {
+                ToDo todo = appDbContext.ToDo.First(todo => todo.Id == toDoId);
+                appDbContext.ToDo.Remove(todo);
+                appDbContext.SaveChanges();
+                return true;
+            }catch (Exception ex) {
+                return false;
+            }
+            
         }
 
-        public ToDo Update(int toDoId, ToDoDto toDoDto)
+        public ToDo Update(int toDoId, ToDoUpdateDto toDoDto)
         {
-            return null;
+            ToDo todo = appDbContext.ToDo.First(todo => todo.Id == toDoId);
+            if(toDoDto.Tittle != null)
+            {
+                todo.Tittle = toDoDto.Tittle;
+            }
+            if(toDoDto.Description != null) {
+                todo.Description = toDoDto.Description;
+            }
+            if (toDoDto.Status != null)
+            {
+                todo.Status = (int)toDoDto.Status;
+            }
+            if (toDoDto.DuedDate != null)
+            {
+                todo.DuedDate = (DateOnly)toDoDto.DuedDate;
+            }
+            if (toDoDto.Multimedias != null)
+            {
+                todo.Multimedias = (ICollection<Multimedia>)toDoDto.Multimedias;
+            }
+
+            appDbContext.SaveChanges();
+            return todo;
         }
 
     }

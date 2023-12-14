@@ -10,10 +10,14 @@ namespace todoApiV1.services
 {
     public interface ITodoService
     {
-        public ToDo? Create(int userId, ToDoDto toDoDto);
+        public ToDo? Create(int userId, ToDoCreateDto toDoDto);
 
         public List<ToDo>? GetToDos(int userId);
 
         public ToDo? GetToDo(int userId, int todoId);
+
+        public ToDo Update(int toDoId, ToDoUpdateDto toDoDto);
+
+        public Boolean Delete(int toDoId);
     }
 }

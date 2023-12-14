@@ -24,7 +24,7 @@ namespace todoApiV1.Controllers
             try
             {
                 AppUser appUser = _userService.GetByEmail(email);
-                AppUserResDTO response = _mapper.Map<AppUserResDTO>(appUser);
+                AppUserReadDTO response = _mapper.Map<AppUserReadDTO>(appUser);
                 return Ok(response);
             }catch (Exception ex)
             {
@@ -49,10 +49,10 @@ namespace todoApiV1.Controllers
 
 
         [HttpPost]
-        public IActionResult Create(UserRegisterReqDto userRegisterReqDto)
+        public IActionResult Create(AppUserCreateDTO userRegisterReqDto)
         {
            AppUser user =  _userService.Create(userRegisterReqDto);
-           AppUserResDTO response = _mapper.Map<AppUserResDTO>(user);
+           AppUserReadDTO response = _mapper.Map<AppUserReadDTO>(user);
            return Ok(response);
         }
 
